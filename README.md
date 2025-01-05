@@ -35,7 +35,7 @@ Follow these steps to run the application locally using **Docker Compose**.
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/saikrishna-1611/Multi.git
+   git clone https://github.com/saikrishna-1611/Multiserver_BlogApi.git
    cd Multi
 2. ***Login to docker in your terminal***
 
