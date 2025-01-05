@@ -1,0 +1,59 @@
+version: "3.8"
+
+services:
+  user-service:
+    build: ./user-service
+    ports:
+      - "4000:4000"
+    environment:
+      - DATABASE_URL=mongodb://mongo:27017/userdb
+      - JWT_SECRET=saikrishna
+    depends_on:
+      - mongo
+      - blog-service
+    volumes:
+      - ./user-service:/usr/src/app  
+      - /usr/src/app/node_modules      
+    networks:
+      - app-network
+    command: npm run start  
+
+  blog-service:
+    build: ./blog-service
+    ports:
+      - "5001:5000"
+    environment:
+      - DATABASE_URL=mongodb://mongo:27017/blogdb
+    depends_on:
+      - mongo
+    volumes:
+      - ./blog-service:/usr/src/app  
+      - /usr/src/app/node_modules     
+      - app-network
+    command: npm run start 
+  comment-service:
+    build: ./comment-service
+    ports:
+      - "6000:6000"
+    environment:
+      - DATABASE_URL=mongodb://mongo:27017/commentdb
+    depends_on:
+      - mongo
+      - blog-service
+    volumes:
+      - ./comment-service:/usr/src/app  
+      - /usr/src/app/node_modules        
+    networks:
+      - app-network
+    command: npm run start  
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
