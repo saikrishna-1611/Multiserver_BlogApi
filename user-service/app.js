@@ -7,6 +7,6 @@ const app=express();
 app.use(express.json());
 connectDB();
 app.use('/users',router);
-app.listen(process.env.PORT,()=>{
-  console.log(`USER sERVICE RUNNING ON PORT ${process.env.PORT}`);
+app.listen(process.env.PORTU,()=>{
+  console.log(`USER sERVICE RUNNING ON PORT ${process.env.PORTU}`);
 });

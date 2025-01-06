@@ -65,6 +65,6 @@ app.get("/api/getallblogs", async (req, res) => {
       return res.status(500).json({ status: "fail", message: error.message });
     }
   });
-app.listen(process.env.PORT, () => {
-  console.log(`Blog Service running on port ${process.env.PORT}`);
+app.listen(process.env.PORTB, () => {
+  console.log(`Blog Service running on port ${process.env.PORTB}`);
 });

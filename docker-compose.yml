@@ -6,7 +6,7 @@ services:
     ports:
       - "4000:4000"
     environment:
-      - DATABASE_URL=mongodb://mongo:27017/userdb
+      - DATABASE_URLU=mongodb://mongo:27017/userdb
       - JWT_SECRET=saikrishna
     depends_on:
       - mongo
@@ -23,7 +23,7 @@ services:
     ports:
       - "5001:5000"
     environment:
-      - DATABASE_URL=mongodb://mongo:27017/blogdb
+      - DATABASE_URLB=mongodb://mongo:27017/blogdb
     depends_on:
       - mongo
     volumes:
@@ -36,7 +36,7 @@ services:
     ports:
       - "6000:6000"
     environment:
-      - DATABASE_URL=mongodb://mongo:27017/commentdb
+      - DATABASE_URLC=mongodb://mongo:27017/commentdb
     depends_on:
       - mongo
       - blog-service
