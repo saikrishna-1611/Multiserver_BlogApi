@@ -35,7 +35,7 @@ Follow these steps to run the application locally using **Docker Compose**.
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/saikrishna-1611/Multi.git
+   git clone https://github.com/saikrishna-1611/Multiserver_BlogApi.git
    cd Multi
 2. ***Login to docker in your terminal***
 
@@ -56,6 +56,9 @@ Follow these steps to run the application locally using **Docker Compose**.
 
 6 .**To stop Running Services**
    docker-compose down
+   
+7 .**Inorder To Rebuild the Service and run at a Time**
+   docker-compose up --build
 
 **OPEN POSTMAN**
    **USER-SERVICE routes**
